@@ -1,0 +1,10 @@
+*.key
+*.pem
+*.crt
+*.p12
+.env
+*.exe
+/bin/
+.DS_Store
+.idea/
+.vscode/
