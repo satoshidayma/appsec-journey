@@ -115,7 +115,6 @@ func registration(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		log.Printf("Приняты данные: логин=%s и пароль=%s", username, password)
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 		fmt.Fprintf(w, "Пользователь %s зарегистрирован", username)
 	}
