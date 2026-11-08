@@ -14,7 +14,7 @@ import (
 	_ "modernc.org/sqlite"
 )
 
-// ⚠️ Одна соль на всех — так делать нельзя, уберется в секции RandomSaltingAndLogin
+// ⚠️ Одна соль на всех — так делать нельзя, уберется в секции RandomSaltingAndLoginPage
 var fixedSalt = []byte("static-salt-123456")
 
 func hashPassword(password string) string {
@@ -22,15 +22,14 @@ func hashPassword(password string) string {
 	hash := argon2.IDKey(
 		[]byte(password),
 		fixedSalt,
-		3, // times: количество проходов
-		64*1024, // memory 
-		4, // threads: параллельные потоки
-		32, // длина результата в байтах
+		3,       // times: количество проходов
+		64*1024, // memory
+		4,       // threads: параллельные потоки
+		32,      // длина результата в байтах
 	)
 	log.Printf("хеширование заняло %v", time.Since(start))
 	return hex.EncodeToString(hash)
 }
-
 
 func registration(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
