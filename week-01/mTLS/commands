@@ -1,0 +1,5 @@
+openssl ecparam -name prime256v1 -genkey -noout -out server.key
+openssl req -new -key server.key -subj "/CN=localhost" -out server.csr
+openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial \
+  -days 90 -sha256 -out server.crt \
+  -extfile <(printf "subjectAltName=DNS:localhost,IP:127.0.0.1\nextendedKeyUsage=serverAuth")
