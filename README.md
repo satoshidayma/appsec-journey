@@ -16,13 +16,16 @@
 
 | Тема | Что внутри |
 |---|---|
-| [CORS misconfiguration](week-01/cors/) | Отражение Origin и доверие к `null`: эксплуатация из браузера, роль SameSite, исправление на Go |
+| [CORS misconfiguration](week-01/cors/CORS_project/) | Отражение Origin и доверие к `null`: эксплуатация из браузера, роль SameSite, исправление на Go |
+| [Хранение паролей](week-01/HMAC/passwords/) | Путь от plaintext к Argon2id + соль + pepper (HMAC-SHA256), атаки на каждом этапе |
+| [Подпись вебхуков](week-01/HMAC/webhook/) | HMAC-SHA256 над телом запроса: подделка и подмена в уязвимой версии, constant-time сравнение и защита от replay в исправленной |
+| [JWT](week-01/JWT/) | Уязвимая проверка токена (`alg: none`, отсутствие проверки `exp`, `iss`, `aud`) и полностью исправленная версия со скриптами проверки |
 
 ## Прогресс
 
 | Неделя | Темы | Проекты | Статус |
 |---|---|---|---|
-| [01](week-01/) | HTTP, cookies, CORS, TLS, хеширование паролей, JWT | [CORS](week-01/cors/) · [mTLS](week-01/tls-mtls/) · [пароли и HMAC](week-01/passwords-hmac/) · [JWT](week-01/jwt/) | 🟡 в процессе |
+| [01](week-01/) | HTTP, cookies, CORS, TLS, хеширование паролей, HMAC, JWT | [CORS](week-01/cors/CORS_project/) · [mTLS](week-01/mTLS/) · [пароли](week-01/HMAC/passwords/) · [вебхуки (HMAC)](week-01/HMAC/webhook/) · [JWT](week-01/JWT/) | 🟡 в процессе |
 | 02 | SQL-инъекции, XSS | — | ⚪ впереди |
 
 Статусы: ✅ завершено · 🟡 в процессе · ⚪ впереди
