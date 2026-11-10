@@ -170,14 +170,14 @@ go mod download
 Этапы 1–3:
 
 ```bash
-cd typicalVulnSite        # или slowHashFunction, RandomSaltingAndLoginPage
+cd passwords/typicalVulnSite        # или slowHashFunction, RandomSaltingAndLoginPage
 go run .
 ```
 
 Этап 4 (нужен pepper):
 
 ```bash
-cd Peppering
+cd passwords/Peppering
 export PEPPER=$(openssl rand -base64 32)
 go run .
 ```
